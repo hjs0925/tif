@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-// LCS ±æÀÌ¿Í LCS ¹®ÀÚ¿­À» Ã£´Â ÇÔ¼ö
+// LCS ê¸¸ì´ì™€ LCS ë¬¸ìì—´ì„ ì°¾ëŠ” í•¨ìˆ˜
 void LCS(char *s1, char *s2) {
     int len1 = strlen(s1);
     int len2 = strlen(s2);
     int LCS_table[len1+1][len2+1];
 
-    // LCS Å×ÀÌºí ÃÊ±âÈ­
+    // LCS í…Œì´ë¸” ì´ˆê¸°í™”
     for(int i = 0; i <= len1; i++) {
         for(int j = 0; j <= len2; j++) {
             if(i == 0 || j == 0) {
@@ -20,13 +20,13 @@ void LCS(char *s1, char *s2) {
         }
     }
 
-    // LCS ±æÀÌ
+    // LCS ê¸¸ì´
     int LCS_length = LCS_table[len1][len2];
-    printf("LCS ±æÀÌ: %d\n", LCS_length);
+    printf("LCS ê¸¸ì´: %d\n", LCS_length);
 
-    // LCS ÃßÀû
+    // LCS ì¶”ì 
     char LCS_str[LCS_length + 1];
-    LCS_str[LCS_length] = '\0'; // ¸¶Áö¸·¿¡ ³Î ¹®ÀÚ Ãß°¡
+    LCS_str[LCS_length] = '\0'; // ë§ˆì§€ë§‰ì— ë„ ë¬¸ì ì¶”ê°€
 
     int i = len1, j = len2;
     while(i > 0 && j > 0) {
